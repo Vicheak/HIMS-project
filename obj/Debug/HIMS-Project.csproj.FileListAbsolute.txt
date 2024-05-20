@@ -1,0 +1,9 @@
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\bin\Debug\HIMS-Project.exe.config
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\bin\Debug\HIMS-Project.exe
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\bin\Debug\HIMS-Project.pdb
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.csproj.AssemblyReference.cache
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS_Project.Properties.Resources.resources
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.csproj.GenerateResource.cache
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.csproj.CoreCompileInputs.cache
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.exe
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.pdb
