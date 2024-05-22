@@ -7,3 +7,4 @@ D:\Target document\Computer science (RUPP) (Year III)\Information System Analysi
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.csproj.CoreCompileInputs.cache
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.exe
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.pdb
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS_Project.Patients.FrmBed.resources
