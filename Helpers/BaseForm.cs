@@ -71,33 +71,40 @@ public class BaseForm : Form
 
     private void ApplyFontToDataGridView(DataGridView dataGridView)
     {
-        var englishFont = FontManager.GetEnglishFont(dataGridView.Font.Size, dataGridView.Font.Style);
-        var khmerFont = FontManager.GetKhmerFont(dataGridView.Font.Size, dataGridView.Font.Style);
+        // Create the fonts once to use for both header and cells
+        var englishFont = FontManager.GetEnglishFont(11, dataGridView.Font.Style);
+        var khmerFont = FontManager.GetKhmerFont(11, dataGridView.Font.Style);
 
         // Apply font to column headers default cell style
         dataGridView.ColumnHeadersDefaultCellStyle.Font = englishFont;
 
-        // Apply font to column headers
-        foreach (DataGridViewColumn column in dataGridView.Columns)
+        // Apply font to the columns and cells after data binding is complete
+        dataGridView.DataBindingComplete += (sender, e) =>
         {
-            column.HeaderCell.Style.Font = IsKhmerText(column.HeaderText) ? khmerFont : englishFont;
-        }
-
-        // Apply font to each cell
-        foreach (DataGridViewRow row in dataGridView.Rows)
-        {
-            foreach (DataGridViewCell cell in row.Cells)
+            // Apply font to column headers
+            foreach (DataGridViewColumn column in dataGridView.Columns)
             {
-                if (cell.Value != null)
+                column.HeaderCell.Style.Font = IsKhmerText(column.HeaderText) ? khmerFont : englishFont;
+            }
+
+            // Apply font to each cell in each row
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    cell.Style.Font = IsKhmerText(cell.Value.ToString()) ? khmerFont : englishFont;
+                    if (cell.Value != null)
+                    {
+                        cell.Style.Font = IsKhmerText(cell.Value.ToString()) ? khmerFont : englishFont;
+                    }
                 }
             }
-        }
+        };
 
         // Apply font to default cell style for new rows
         dataGridView.DefaultCellStyle.Font = englishFont;
     }
+
+
 
     protected void AttachTextChangedHandlers(Control control)
     {
@@ -115,8 +122,8 @@ public class BaseForm : Form
                     if (cell.Value != null)
                     {
                         cell.Style.Font = IsKhmerText(cell.Value.ToString())
-                            ? FontManager.GetKhmerFont(dataGridView.Font.Size, dataGridView.Font.Style)
-                            : FontManager.GetEnglishFont(dataGridView.Font.Size, dataGridView.Font.Style);
+                            ? FontManager.GetKhmerFont(11, dataGridView.Font.Style)
+                            : FontManager.GetEnglishFont(11, dataGridView.Font.Style);
                     }
                 };
             }
