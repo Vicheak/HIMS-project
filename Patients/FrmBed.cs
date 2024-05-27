@@ -109,6 +109,7 @@ namespace HIMS_Project.Patients
             ListChangeBedBindingSource(); 
             bedBindingSource.ListChanged += BedBindingSource_ListChanged;
         }
+        
 
         private void BedBindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
