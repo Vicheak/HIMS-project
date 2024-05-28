@@ -8,3 +8,16 @@ D:\Target document\Computer science (RUPP) (Year III)\Information System Analysi
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.exe
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.pdb
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS_Project.Patients.FrmBed.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\HIMS-Project.exe.config
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\HIMS-Project.exe
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\HIMS-Project.pdb
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.csproj.AssemblyReference.cache
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Patients.FrmBed.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Properties.Resources.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.csproj.GenerateResource.cache
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.csproj.CoreCompileInputs.cache
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.exe
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.pdb
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\Lexend.ttf
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\AKbalthomKmengKmang.ttf
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Helpers.SampleForm.resources
