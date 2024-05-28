@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HIMS_Project.Patients
 {
-    public partial class FrmBed : Form
+    public partial class FrmBed : BaseForm
     {
         protected SqlConnection connection = 
             new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=HIMS;Integrated Security=True;");
@@ -83,6 +83,7 @@ namespace HIMS_Project.Patients
             //bind to control
             txtBedID.DataBindings.Add("Text", bedBindingSource, "BedID");
             txtBedDescription.DataBindings.Add("Text", bedBindingSource, "BedDescription");
+            checkBoxBedStatus.DataBindings.Add("Checked", bedBindingSource, "Status");
 
             cbFilterRoom.DataSource = roomBindingSource;
             cbFilterRoom.DisplayMember = "RoomNumber";
@@ -92,7 +93,7 @@ namespace HIMS_Project.Patients
             cbFilterRoomType.DataSource = roomTypeBindingSource;
             cbFilterRoomType.DisplayMember = "RoomTypeName";
             cbFilterRoomType.ValueMember = "RoomTypeID";
-            cbFilterRoomType.DataBindings.Add("SelectedValue", roomBindingSource, "RoomTypeID"); 
+            cbFilterRoomType.DataBindings.Add("SelectedValue", roomBindingSource, "RoomTypeID");
         }
 
         private void FrmBed_Load(object sender, EventArgs e)
@@ -104,11 +105,10 @@ namespace HIMS_Project.Patients
             });
             cbFilterTopBedRecord.SelectedIndex = 0;
 
-            dgvBed.SelectionChanged += DgvBed_SelectionChanged;
-
             ListChangeBedBindingSource(); 
             bedBindingSource.ListChanged += BedBindingSource_ListChanged;
         }
+        
 
         private void BedBindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
@@ -118,19 +118,6 @@ namespace HIMS_Project.Patients
         private void ListChangeBedBindingSource()
         {
             toolStripLblTotalBed.Text = bedBindingSource.Count.ToString();
-        }
-
-        private void DgvBed_SelectionChanged(object sender, EventArgs e)
-        {
-            var currentRow = bedBindingSource.Current as DataRowView;
-            if (currentRow != null)
-            {
-                string status = (string)currentRow.Row["Status"];
-                if (string.Equals(status, "Available"))
-                    checkBoxBedStatus.Checked = true;
-                else
-                    checkBoxBedStatus.Checked = false;
-            }
         }
 
         private void cbFilterTopBedRecord_SelectedIndexChanged(object sender, EventArgs e)
