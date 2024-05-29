@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HIMS_Project
+namespace HIMS_Project.Helpers
 {
-    public partial class Form1 : Form
+    public partial class SampleForm : BaseForm
     {
-        public Form1()
+        public SampleForm()
         {
             InitializeComponent();
         }
