@@ -65,7 +65,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="appsettings.json" />
     <None Include="Resources\logo.ico" />
     <EmbeddedResource Include="Helpers\SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>

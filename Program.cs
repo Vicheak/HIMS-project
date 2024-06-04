@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,5 +21,7 @@ namespace HIMS_Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmBed());
         }
+
+        public static SqlConnection Connection { get => new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=HIMS;Integrated Security=True;"); }
     }
 }

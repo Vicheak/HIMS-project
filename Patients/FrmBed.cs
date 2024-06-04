@@ -14,8 +14,7 @@ namespace HIMS_Project.Patients
 {
     public partial class FrmBed : Form
     {
-        protected SqlConnection connection = 
-            new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=HIMS;Integrated Security=True;");
+        protected SqlConnection connection = Program.Connection;            
 
         protected DataSet dataSet = new DataSet();
 
@@ -30,7 +29,7 @@ namespace HIMS_Project.Patients
         protected SqlDataAdapter roomAdapter = new SqlDataAdapter();
         protected BindingSource roomBindingSource = new BindingSource(); 
 
-        public static string VIEW_BED_INFO = "tbBed";
+        public static string VIEW_BED_INFO = "vBedInfo";
         public static string VIEW_ROOM_TYPE_SELECT = "vRoomTypeSelect";
         public static string VIEW_ROOM_SELECT = "vRoomSelect"; 
 
@@ -61,7 +60,7 @@ namespace HIMS_Project.Patients
                 .Direction = ParameterDirection.Input;
 
             //map from default table name to specific table name
-            bedAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            //bedAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             bedAdapter.TableMappings.Add("Table", VIEW_BED_INFO);
             bedAdapter.Fill(dataSet);
 
