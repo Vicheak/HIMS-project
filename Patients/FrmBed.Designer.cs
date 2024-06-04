@@ -30,8 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBed));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBed = new System.Windows.Forms.DataGridView();
+            this.BedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblTotalBed = new System.Windows.Forms.ToolStripLabel();
@@ -65,12 +72,7 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.BedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBed)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -94,6 +96,7 @@
             // 
             this.dgvBed.AllowUserToAddRows = false;
             this.dgvBed.AllowUserToDeleteRows = false;
+            this.dgvBed.AllowUserToResizeColumns = false;
             this.dgvBed.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.MidnightBlue;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
@@ -126,11 +129,71 @@
             this.dgvBed.Location = new System.Drawing.Point(12, 380);
             this.dgvBed.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBed.Name = "dgvBed";
+            this.dgvBed.ReadOnly = true;
             this.dgvBed.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvBed.RowHeadersWidth = 51;
             this.dgvBed.RowTemplate.Height = 45;
             this.dgvBed.Size = new System.Drawing.Size(1158, 329);
             this.dgvBed.TabIndex = 10;
+            // 
+            // BedID
+            // 
+            this.BedID.DataPropertyName = "BedID";
+            this.BedID.HeaderText = "Bed ID";
+            this.BedID.MinimumWidth = 6;
+            this.BedID.Name = "BedID";
+            this.BedID.ReadOnly = true;
+            this.BedID.Width = 125;
+            // 
+            // BedDescription
+            // 
+            this.BedDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BedDescription.DataPropertyName = "BedDescription";
+            this.BedDescription.HeaderText = "Bed Description";
+            this.BedDescription.MinimumWidth = 6;
+            this.BedDescription.Name = "BedDescription";
+            this.BedDescription.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "StatusText";
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 125;
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RoomNumber.DataPropertyName = "RoomNumber";
+            this.RoomNumber.HeaderText = "Room Number";
+            this.RoomNumber.MinimumWidth = 6;
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.ReadOnly = true;
+            this.RoomNumber.Width = 173;
+            // 
+            // RoomID
+            // 
+            this.RoomID.DataPropertyName = "RoomID";
+            this.RoomID.HeaderText = "Room ID";
+            this.RoomID.MinimumWidth = 6;
+            this.RoomID.Name = "RoomID";
+            this.RoomID.ReadOnly = true;
+            this.RoomID.Visible = false;
+            this.RoomID.Width = 125;
+            // 
+            // StatusCheck
+            // 
+            this.StatusCheck.DataPropertyName = "Status";
+            this.StatusCheck.HeaderText = "Status Check";
+            this.StatusCheck.MinimumWidth = 6;
+            this.StatusCheck.Name = "StatusCheck";
+            this.StatusCheck.ReadOnly = true;
+            this.StatusCheck.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.StatusCheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.StatusCheck.Visible = false;
+            this.StatusCheck.Width = 125;
             // 
             // toolStrip1
             // 
@@ -222,7 +285,7 @@
             this.cbFilterTopBedRecord.Size = new System.Drawing.Size(234, 44);
             this.cbFilterTopBedRecord.TabIndex = 7;
             this.cbFilterTopBedRecord.TabStop = false;
-            this.cbFilterTopBedRecord.SelectedIndexChanged += new System.EventHandler(this.cbFilterTopBedRecord_SelectedIndexChanged);
+            //this.cbFilterTopBedRecord.SelectedIndexChanged += new System.EventHandler(this.cbFilterTopBedRecord_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -251,7 +314,7 @@
             this.txtFilterBedRoom.Size = new System.Drawing.Size(229, 44);
             this.txtFilterBedRoom.TabIndex = 13;
             this.txtFilterBedRoom.TabStop = false;
-            this.txtFilterBedRoom.TextChanged += new System.EventHandler(this.txtFilterBedRoom_TextChanged);
+            //this.txtFilterBedRoom.TextChanged += new System.EventHandler(this.txtFilterBedRoom_TextChanged);
             // 
             // label6
             // 
@@ -292,7 +355,7 @@
             this.checkBoxFilterBedStatus.TabIndex = 10;
             this.checkBoxFilterBedStatus.TabStop = false;
             this.checkBoxFilterBedStatus.UseVisualStyleBackColor = true;
-            this.checkBoxFilterBedStatus.Click += new System.EventHandler(this.checkBoxFilterBedStatus_Click);
+            //this.checkBoxFilterBedStatus.Click += new System.EventHandler(this.checkBoxFilterBedStatus_Click);
             // 
             // label4
             // 
@@ -356,7 +419,7 @@
             this.txtBedDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtBedDescription.Multiline = true;
             this.txtBedDescription.Name = "txtBedDescription";
-            this.txtBedDescription.Size = new System.Drawing.Size(230, 182);
+            this.txtBedDescription.Size = new System.Drawing.Size(186, 182);
             this.txtBedDescription.TabIndex = 2;
             // 
             // checkBoxBedStatus
@@ -452,13 +515,14 @@
             this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(751, 320);
+            this.btnAddNew.Location = new System.Drawing.Point(706, 320);
             this.btnAddNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(124, 41);
+            this.btnAddNew.Size = new System.Drawing.Size(115, 41);
             this.btnAddNew.TabIndex = 1;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnUpdate
             // 
@@ -467,10 +531,10 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(898, 320);
+            this.btnUpdate.Location = new System.Drawing.Point(838, 320);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(124, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(96, 41);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -482,72 +546,35 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1045, 320);
+            this.btnDelete.Location = new System.Drawing.Point(950, 320);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(124, 41);
+            this.btnDelete.Size = new System.Drawing.Size(95, 41);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // BedID
+            // btnSave
             // 
-            this.BedID.DataPropertyName = "BedID";
-            this.BedID.HeaderText = "Bed ID";
-            this.BedID.MinimumWidth = 6;
-            this.BedID.Name = "BedID";
-            this.BedID.Width = 125;
-            // 
-            // BedDescription
-            // 
-            this.BedDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BedDescription.DataPropertyName = "BedDescription";
-            this.BedDescription.HeaderText = "Bed Description";
-            this.BedDescription.MinimumWidth = 6;
-            this.BedDescription.Name = "BedDescription";
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "StatusText";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 125;
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RoomNumber.DataPropertyName = "RoomNumber";
-            this.RoomNumber.HeaderText = "Room Number";
-            this.RoomNumber.MinimumWidth = 6;
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.Width = 173;
-            // 
-            // RoomID
-            // 
-            this.RoomID.DataPropertyName = "RoomID";
-            this.RoomID.HeaderText = "Room ID";
-            this.RoomID.MinimumWidth = 6;
-            this.RoomID.Name = "RoomID";
-            this.RoomID.Visible = false;
-            this.RoomID.Width = 125;
-            // 
-            // StatusCheck
-            // 
-            this.StatusCheck.DataPropertyName = "Status";
-            this.StatusCheck.HeaderText = "Status Check";
-            this.StatusCheck.MinimumWidth = 6;
-            this.StatusCheck.Name = "StatusCheck";
-            this.StatusCheck.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.StatusCheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.StatusCheck.Visible = false;
-            this.StatusCheck.Width = 125;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(1075, 320);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(95, 41);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // FrmBed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1182, 752);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddNew);
@@ -574,6 +601,7 @@
             this.Controls.Add(this.dgvBed);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmBed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -632,5 +660,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
         private System.Windows.Forms.DataGridViewCheckBoxColumn StatusCheck;
+        private System.Windows.Forms.Button btnSave;
     }
 }

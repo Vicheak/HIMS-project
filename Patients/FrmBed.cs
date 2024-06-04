@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HIMS_Project.Patients
 {
-    public partial class FrmBed : BaseForm
+    public partial class FrmBed : Form
     {
         protected SqlConnection connection = 
             new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=HIMS;Integrated Security=True;");
@@ -30,7 +30,7 @@ namespace HIMS_Project.Patients
         protected SqlDataAdapter roomAdapter = new SqlDataAdapter();
         protected BindingSource roomBindingSource = new BindingSource(); 
 
-        public static string VIEW_BED_INFO = "vBedInfo";
+        public static string VIEW_BED_INFO = "tbBed";
         public static string VIEW_ROOM_TYPE_SELECT = "vRoomTypeSelect";
         public static string VIEW_ROOM_SELECT = "vRoomSelect"; 
 
@@ -47,15 +47,33 @@ namespace HIMS_Project.Patients
             command.Connection = connection; 
             command.CommandText = $"SELECT * FROM {VIEW_BED_INFO}"; 
             bedAdapter.SelectCommand = command;
+            bedAdapter.InsertCommand = new SqlCommand
+            {
+                CommandText = "spInsertBedInfo",
+                CommandType = CommandType.StoredProcedure,
+                Connection = this.connection
+            };
+            bedAdapter.InsertCommand.Parameters.Add("@BedDescription", SqlDbType.NVarChar, 255)
+                .Direction = ParameterDirection.Input;
+            bedAdapter.InsertCommand.Parameters.Add("@Status", SqlDbType.Bit, 0)
+                .Direction = ParameterDirection.Input;
+            bedAdapter.InsertCommand.Parameters.Add("@RoomID", SqlDbType.Int, 0)
+                .Direction = ParameterDirection.Input;
 
             //map from default table name to specific table name
+            bedAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             bedAdapter.TableMappings.Add("Table", VIEW_BED_INFO);
             bedAdapter.Fill(dataSet);
 
+            //define primary key for data table 
+            //var bedTable = dataSet.Tables[VIEW_BED_INFO];
+            //bedTable.PrimaryKey = new DataColumn[]
+            //{
+            //    bedTable.Columns["BedID"]
+            //};
+
             bedBindingSource.DataSource = dataSet;
             bedBindingSource.DataMember = VIEW_BED_INFO;
-
-            dgvBed.DataSource = bedBindingSource;
 
             //set up for tbRoomType
             roomTypeAdapter.SelectCommand = new SqlCommand($"SELECT * FROM {VIEW_ROOM_TYPE_SELECT}",
@@ -81,6 +99,8 @@ namespace HIMS_Project.Patients
         private void setUpBinding()
         {
             //bind to control
+            dgvBed.DataSource = bedBindingSource;
+
             txtBedID.DataBindings.Add("Text", bedBindingSource, "BedID");
             txtBedDescription.DataBindings.Add("Text", bedBindingSource, "BedDescription");
             checkBoxBedStatus.DataBindings.Add("Checked", bedBindingSource, "Status");
@@ -185,6 +205,11 @@ namespace HIMS_Project.Patients
             }
 
             FilterBedInfo(); 
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
