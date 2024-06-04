@@ -13,6 +13,7 @@ public class BaseForm : Form
 
     private void BaseForm_Load(object sender, EventArgs e)
     {
+        this.Icon = global::HIMS_Project.Properties.Resources.logo;
         ApplyFonts(this);
         AttachTextChangedHandlers(this);
     }
