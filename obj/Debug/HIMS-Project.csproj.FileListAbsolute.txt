@@ -8,3 +8,14 @@ D:\Target document\Computer science (RUPP) (Year III)\Information System Analysi
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.exe
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS-Project.pdb
 D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS_Project.Patients.FrmBed.resources
+D:\C#\HIMS-project\bin\Debug\HIMS-Project.exe.config
+D:\C#\HIMS-project\bin\Debug\HIMS-Project.exe
+D:\C#\HIMS-project\bin\Debug\HIMS-Project.pdb
+D:\C#\HIMS-project\obj\Debug\HIMS-Project.csproj.AssemblyReference.cache
+D:\C#\HIMS-project\obj\Debug\HIMS_Project.Patients.FrmBed.resources
+D:\C#\HIMS-project\obj\Debug\HIMS_Project.Properties.Resources.resources
+D:\C#\HIMS-project\obj\Debug\HIMS-Project.csproj.GenerateResource.cache
+D:\C#\HIMS-project\obj\Debug\HIMS-Project.csproj.CoreCompileInputs.cache
+D:\C#\HIMS-project\obj\Debug\HIMS-Project.exe
+D:\C#\HIMS-project\obj\Debug\HIMS-Project.pdb
+D:\C#\HIMS-project\obj\Debug\HIMS_Project.Department.DepartmentForm.resources
