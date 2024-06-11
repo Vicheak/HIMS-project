@@ -18,7 +18,7 @@ namespace HIMS_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBed());
+            Application.Run(new DepartmentForm());
         }
     }
 }

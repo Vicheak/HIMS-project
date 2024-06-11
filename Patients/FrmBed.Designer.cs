@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBed = new System.Windows.Forms.DataGridView();
+            this.BedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLblTotalBed = new System.Windows.Forms.ToolStripLabel();
@@ -65,11 +70,6 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.BedID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BedDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBed)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,22 +93,22 @@
             this.dgvBed.AllowUserToAddRows = false;
             this.dgvBed.AllowUserToDeleteRows = false;
             this.dgvBed.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            this.dgvBed.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgvBed.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBed.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBed.BackgroundColor = System.Drawing.Color.White;
             this.dgvBed.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Khmer OS Siemreap", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBed.ColumnHeadersHeight = 50;
             this.dgvBed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvBed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -127,6 +127,48 @@
             this.dgvBed.RowTemplate.Height = 45;
             this.dgvBed.Size = new System.Drawing.Size(1158, 329);
             this.dgvBed.TabIndex = 10;
+            // 
+            // BedID
+            // 
+            this.BedID.DataPropertyName = "BedID";
+            this.BedID.HeaderText = "Bed ID";
+            this.BedID.MinimumWidth = 6;
+            this.BedID.Name = "BedID";
+            this.BedID.Width = 311;
+            // 
+            // BedDescription
+            // 
+            this.BedDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BedDescription.DataPropertyName = "BedDescription";
+            this.BedDescription.HeaderText = "Bed Description";
+            this.BedDescription.MinimumWidth = 6;
+            this.BedDescription.Name = "BedDescription";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 311;
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RoomNumber.DataPropertyName = "RoomNumber";
+            this.RoomNumber.HeaderText = "Room Number";
+            this.RoomNumber.MinimumWidth = 6;
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.Width = 173;
+            // 
+            // RoomID
+            // 
+            this.RoomID.DataPropertyName = "RoomID";
+            this.RoomID.HeaderText = "Room ID";
+            this.RoomID.MinimumWidth = 6;
+            this.RoomID.Name = "RoomID";
+            this.RoomID.Visible = false;
+            this.RoomID.Width = 125;
             // 
             // toolStrip1
             // 
@@ -456,48 +498,6 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // BedID
-            // 
-            this.BedID.DataPropertyName = "BedID";
-            this.BedID.HeaderText = "Bed ID";
-            this.BedID.MinimumWidth = 6;
-            this.BedID.Name = "BedID";
-            this.BedID.Width = 125;
-            // 
-            // BedDescription
-            // 
-            this.BedDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BedDescription.DataPropertyName = "BedDescription";
-            this.BedDescription.HeaderText = "Bed Description";
-            this.BedDescription.MinimumWidth = 6;
-            this.BedDescription.Name = "BedDescription";
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 125;
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.RoomNumber.DataPropertyName = "RoomNumber";
-            this.RoomNumber.HeaderText = "Room Number";
-            this.RoomNumber.MinimumWidth = 6;
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.Width = 173;
-            // 
-            // RoomID
-            // 
-            this.RoomID.DataPropertyName = "RoomID";
-            this.RoomID.HeaderText = "Room ID";
-            this.RoomID.MinimumWidth = 6;
-            this.RoomID.Name = "RoomID";
-            this.RoomID.Visible = false;
-            this.RoomID.Width = 125;
             // 
             // FrmBed
             // 
