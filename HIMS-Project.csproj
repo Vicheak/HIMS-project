@@ -57,6 +57,12 @@
     <Compile Include="Helpers\SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\FrmAddOrModifyBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\FrmAddOrModifyBed.Designer.cs">
+      <DependentUpon>FrmAddOrModifyBed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patients\FrmBed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <None Include="Resources\logo.ico" />
     <EmbeddedResource Include="Helpers\SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\FrmAddOrModifyBed.resx">
+      <DependentUpon>FrmAddOrModifyBed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\FrmBed.resx">
       <DependentUpon>FrmBed.cs</DependentUpon>
