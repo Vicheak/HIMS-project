@@ -44,7 +44,7 @@ namespace HIMS_Project.Patients
             //set up command for tbRoom
             roomAdapter.SelectCommand = new SqlCommand
             {
-                CommandText = "spFilterRoomInfo",
+                CommandText = "spFilterRoomInfoByRoomTypeID",
                 CommandType = CommandType.StoredProcedure,
                 Connection = this.connection
             };
@@ -100,10 +100,10 @@ namespace HIMS_Project.Patients
 
         private void cbRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterRoomInfo(Convert.ToInt32(cbRoomType.SelectedValue));
+            FilterRoomInfoByRoomTypeID(Convert.ToInt32(cbRoomType.SelectedValue));
         }
 
-        private void FilterRoomInfo(int roomTypeID)
+        private void FilterRoomInfoByRoomTypeID(int roomTypeID)
         {
             dataSet.Tables[FrmBed.VIEW_ROOM_SELECT].Clear();
 
@@ -135,17 +135,12 @@ namespace HIMS_Project.Patients
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            btnSave_Click(sender, e, txtBedDesc);
-        }
-
-        private void btnSave_Click(object sender, EventArgs e, TextBox txtBedDesc)
-        {
             //validate
             if (cbRoom.SelectedValue == null)
             {
                 MessageBox.Show("Please select any room!", "Warning",
                   MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbRoom.Focus(); 
+                cbRoom.Focus();
                 return;
             }
 
@@ -163,7 +158,7 @@ namespace HIMS_Project.Patients
                 currentRow.Row.ItemArray = new object[]
                 {
                    DBNull.Value,
-                   descriptionValue, 
+                   descriptionValue,
                    checkBoxBedStatus.Checked ? 1 : 0,
                    checkBoxBedStatus.Checked ? "Available" : "Unavailable",
                    Convert.ToInt32(cbRoom.SelectedValue),
@@ -183,7 +178,7 @@ namespace HIMS_Project.Patients
                    Convert.ToInt32(cbRoom.SelectedValue),
                    cbRoom.Text,
                    Convert.ToInt32(cbRoomType.SelectedValue)
-                }; 
+                };
             }
 
             //close the form itself

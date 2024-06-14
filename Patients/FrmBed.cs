@@ -44,8 +44,14 @@ namespace HIMS_Project.Patients
         protected void setUpCommand()
         {
             //set up command for tbBed
-            bedAdapter.SelectCommand = new SqlCommand($"SELECT * FROM {VIEW_BED_INFO}",
-                this.connection);
+            bedAdapter.SelectCommand = new SqlCommand
+            {
+                CommandText = "spSelectTopBedRecord",
+                CommandType = CommandType.StoredProcedure,
+                Connection = this.connection
+            };
+            bedAdapter.SelectCommand.Parameters.Add("@numberOfRecords", SqlDbType.Int, 0)
+                .Direction = ParameterDirection.Input;
             bedAdapter.InsertCommand = new SqlCommand
             {
                 CommandText = "spInsertBedInfo",
@@ -61,8 +67,6 @@ namespace HIMS_Project.Patients
                    .Direction = ParameterDirection.Input; 
             bedAdapter.InsertCommand.Parameters.Add("@RoomID", SqlDbType.Int, 0, "RoomID")
                    .Direction = ParameterDirection.Input;
-            bedAdapter.InsertCommand.Parameters.Add("@BedID", SqlDbType.Int, 0)
-                   .Direction = ParameterDirection.Output; 
             bedAdapter.UpdateCommand = new SqlCommand
             {
                 CommandText = "spUpdateBedInfo",
@@ -96,23 +100,23 @@ namespace HIMS_Project.Patients
             //set up command for tbRoom
             roomAdapter.SelectCommand = new SqlCommand
             {
-                CommandText = "spFilterRoomInfo",
+                CommandText = "spFilterRoomInfoByRoomTypeID",
                 CommandType = CommandType.StoredProcedure,
                 Connection = this.connection
             };
-
             roomAdapter.SelectCommand.Parameters.Add("@roomTypeID", SqlDbType.SmallInt, 0)
                 .Direction = ParameterDirection.Input;
         }
 
         protected void FillData()
         {
-            //map from default table name to specific table name
+            bedAdapter.SelectCommand.Parameters["@numberOfRecords"].Value = 5;
             bedAdapter.TableMappings.Add("Table", VIEW_BED_INFO);
             bedAdapter.Fill(dataSet);
             bedBindingSource.DataSource = dataSet;
             bedBindingSource.DataMember = VIEW_BED_INFO;
 
+            //map from default table name to specific table name
             roomTypeAdapter.TableMappings.Add("Table", VIEW_ROOM_TYPE_SELECT);
             roomTypeAdapter.Fill(dataSet);
             roomTypeBindingSource.DataSource = dataSet;
@@ -166,8 +170,8 @@ namespace HIMS_Project.Patients
             bedAdapter.SelectCommand.Parameters.Add("@numberOfRecords", SqlDbType.Int, 0)
                 .Direction = ParameterDirection.Input;
 
-            bedAdapter.SelectCommand.Parameters["@numberOfRecords"].Value = 
-                cbFilterTopBedRecord.SelectedIndex == 0 ? 5 : 10;
+            bedAdapter.SelectCommand.Parameters["@numberOfRecords"].Value =
+                    cbFilterTopBedRecord.SelectedIndex == 0 ? 5 : 10;
 
             dataSet.Tables[VIEW_BED_INFO].Clear();
             bedAdapter.Fill(dataSet);
@@ -175,7 +179,7 @@ namespace HIMS_Project.Patients
 
         private void cbFilterRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterRoomInfo(Convert.ToInt32(cbFilterRoomType.SelectedValue));
+            FilterRoomInfoByRoomTypeID(Convert.ToInt32(cbFilterRoomType.SelectedValue));
             FilterBedInfoByRoomTypeID(Convert.ToInt32(cbFilterRoomType.SelectedValue)); 
         }
 
@@ -183,10 +187,10 @@ namespace HIMS_Project.Patients
         {
             var dataRow = cbFilterRoom.SelectedItem as DataRowView;
             if (dataRow == null) return; 
-            FilterBedInfoByRoomNumber((string)dataRow.Row["RoomNumber"]);
+            FilterBedInfoByRoomID((int)dataRow.Row["RoomID"]);
         }
 
-        private void FilterRoomInfo(int roomTypeID)
+        private void FilterRoomInfoByRoomTypeID(int roomTypeID)
         {
             dataSet.Tables[VIEW_ROOM_SELECT].Clear();
 
@@ -225,18 +229,18 @@ namespace HIMS_Project.Patients
             bedAdapter.Fill(dataSet);
         }
         
-        private void FilterBedInfoByRoomNumber(string roomNumber)
+        private void FilterBedInfoByRoomID(int roomID)
         {
             bedAdapter.SelectCommand = new SqlCommand
             {
-                CommandText = "spFilterBedInfoByRoomNumber",
+                CommandText = "spFilterBedInfoByRoomID",
                 CommandType = CommandType.StoredProcedure,
                 Connection = this.connection
             };
-            bedAdapter.SelectCommand.Parameters.Add("@roomNumber", SqlDbType.VarChar, 3)
+            bedAdapter.SelectCommand.Parameters.Add("@roomID", SqlDbType.VarChar, 3)
                .Direction = ParameterDirection.Input;
 
-            bedAdapter.SelectCommand.Parameters["@roomNumber"].Value = roomNumber;
+            bedAdapter.SelectCommand.Parameters["@roomID"].Value = roomID; 
 
             dataSet.Tables[VIEW_BED_INFO].Clear();
             bedAdapter.Fill(dataSet);
@@ -330,10 +334,6 @@ namespace HIMS_Project.Patients
             {
                 bedBindingSource.EndEdit();
                 bedAdapter.Update(dataSet, VIEW_BED_INFO);
-
-                //refresh bed record
-                int bedID = (int)bedAdapter.InsertCommand.Parameters["@BedID"].Value;
-                SearchBedInfoByBedID(bedID);
             }
         }
 
@@ -352,22 +352,6 @@ namespace HIMS_Project.Patients
                 bedBindingSource.ResetCurrentItem();
                 bedAdapter.Update(dataSet, VIEW_BED_INFO);
             }
-        }
-
-        private void SearchBedInfoByBedID(int bedID)
-        {
-            bedAdapter.SelectCommand = new SqlCommand
-            {
-                CommandText = "spSearchBedInfoByBedID",
-                CommandType = CommandType.StoredProcedure,
-                Connection = this.connection
-            };
-            bedAdapter.SelectCommand.Parameters.Add("@BedID", SqlDbType.Int, 0)
-                  .Direction = ParameterDirection.Input;
-            bedAdapter.SelectCommand.Parameters["@BedID"].Value = bedID;
-
-            dataSet.Tables[VIEW_BED_INFO].Clear();
-            bedAdapter.Fill(dataSet, VIEW_BED_INFO);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
