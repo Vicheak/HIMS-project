@@ -62,7 +62,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 16F);
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -298,6 +298,7 @@
             // SampleForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox1);

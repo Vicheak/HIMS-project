@@ -21,3 +21,10 @@ D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\Lexend.ttf
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\AKbalthomKmengKmang.ttf
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Helpers.SampleForm.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Forms.FrmStaff.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\medical-assistance.png
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Forms.FrmStaffActivity.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Forms.FrmAppointment.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\medical-assistance1.png
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\header-bg.png
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\app.png

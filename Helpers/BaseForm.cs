@@ -8,7 +8,15 @@ public class BaseForm : Form
 {
     public BaseForm()
     {
+        InitializeComponent();
         this.Load += BaseForm_Load;
+    }
+    private void InitializeComponent()
+    {
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        this.Icon = global::HIMS_Project.Properties.Resources.logo;
+        this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
     }
 
     private void BaseForm_Load(object sender, EventArgs e)
