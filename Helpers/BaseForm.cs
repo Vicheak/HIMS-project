@@ -21,6 +21,7 @@ public class BaseForm : Form
 
     private void BaseForm_Load(object sender, EventArgs e)
     {
+        this.Icon = global::HIMS_Project.Properties.Resources.logo;
         ApplyFonts(this);
         AttachTextChangedHandlers(this);
     }
@@ -111,8 +112,6 @@ public class BaseForm : Form
         // Apply font to default cell style for new rows
         dataGridView.DefaultCellStyle.Font = englishFont;
     }
-
-
 
     protected void AttachTextChangedHandlers(Control control)
     {

@@ -21,6 +21,7 @@ D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\Lexend.ttf
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\AKbalthomKmengKmang.ttf
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Helpers.SampleForm.resources
+<<<<<<< HEAD
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Forms.FrmStaff.resources
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\medical-assistance.png
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Forms.FrmStaffActivity.resources
@@ -28,3 +29,13 @@ D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\medical-assistance1.png
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\header-bg.png
 D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\Resources\app.png
+=======
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\bin\Debug\Resources\Lexend.ttf
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\bin\Debug\Resources\AKbalthomKmengKmang.ttf
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-Project\obj\Debug\HIMS_Project.Helpers.SampleForm.resources
+D:\Target document\Computer science (RUPP) (Year III)\Information System Analysis & Design (ISAD)\HIMS Project\HIMS-project\obj\Debug\HIMS_Project.Patients.FrmAddOrModifyBed.resources
+>>>>>>> 3866e663cac86e6cb8dc9a8a57c62413e8fe714c
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS_Project.Patients.FrmAddOrModifyBed.resources
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\System.Data.SqlClient.dll
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\bin\Debug\System.Data.SqlClient.xml
+D:\S L S\YEAR III\GitHub\SLS\I S A D\H I M S\HIMS-project\obj\Debug\HIMS-Project.csproj.CopyComplete

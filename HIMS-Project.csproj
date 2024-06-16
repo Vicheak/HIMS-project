@@ -56,22 +56,22 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\FrmAppointment.cs">
+    <Compile Include="AllForms\FrmAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmAppointment.Designer.cs">
+    <Compile Include="AllForms\FrmAppointment.Designer.cs">
       <DependentUpon>FrmAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmStaff.cs">
+    <Compile Include="AllForms\FrmStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmStaff.Designer.cs">
+    <Compile Include="AllForms\FrmStaff.Designer.cs">
       <DependentUpon>FrmStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmStaffActivity.cs">
+    <Compile Include="AllForms\FrmStaffActivity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmStaffActivity.Designer.cs">
+    <Compile Include="AllForms\FrmStaffActivity.Designer.cs">
       <DependentUpon>FrmStaffActivity.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BaseForm.cs">
@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Helpers\SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\FrmAddOrModifyBed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\FrmAddOrModifyBed.Designer.cs">
+      <DependentUpon>FrmAddOrModifyBed.cs</DependentUpon>
     </Compile>
     <Compile Include="Patients\FrmBed.cs">
       <SubType>Form</SubType>
@@ -101,17 +107,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\logo.ico" />
-    <EmbeddedResource Include="Forms\FrmAppointment.resx">
+    <EmbeddedResource Include="AllForms\FrmAppointment.resx">
       <DependentUpon>FrmAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmStaff.resx">
+    <EmbeddedResource Include="AllForms\FrmStaff.resx">
       <DependentUpon>FrmStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmStaffActivity.resx">
+    <EmbeddedResource Include="AllForms\FrmStaffActivity.resx">
       <DependentUpon>FrmStaffActivity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Helpers\SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\FrmAddOrModifyBed.resx">
+      <DependentUpon>FrmAddOrModifyBed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patients\FrmBed.resx">
       <DependentUpon>FrmBed.cs</DependentUpon>
